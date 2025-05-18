@@ -262,7 +262,7 @@ def logeo():
 
         opciones_crearanuncio()
 
-
+    #VerReclamos:
     def verReclamosAdmin():
             print("A continuación se mostrarán todos los reclamos:") 
             y=1
@@ -276,3 +276,4 @@ def logeo():
                 print("________________________________________________")
                 y+=1
 logeo()
+
