@@ -5,28 +5,12 @@ lista_reclamos = []
 lista_contratos = []
 #Función logeo
 def logeo():
-    usuario = input("Colocar usuario:")
-    password = input("Colocar contraseña:")
-    encontro = False
-    for cuenta in cuentas:
-        if (usuario == cuenta[0]) & (password == cuenta[1]) :
-            encontro = True 
-            if (cuenta[2] == "Admin"):
-                interfazAdmin()
-            elif (cuenta[2] == "Trabajador"):
-                interfazTrabajador()
-    
-    if encontro == False:
-        print("Incorrecto")
-        logeo()
-
-         
     #Funcion Interfaz del Admin
     def interfazAdmin():
         print("Ingreso correctamente - Admin")
 
         opcion1 = input("Elige: \n1.Crear Anuncio\n2.Ver Reclamos\n3.Crear cuenta de trabajador\n4.Emitir contratos\n5.Cerrar sesión\n")
-
+        
         if opcion1 == "1":
             print("Elegiste la opción 1")
             crearAnunciosAdmin()
@@ -176,14 +160,24 @@ def logeo():
                 for elemento in lista_contratos:                   
                     if elemento[0] == usuario:
                         print(f"Contrato #{z}:\nNombre:{elemento[0]}\nFecha:{elemento[1]}\nDescripcion:{elemento[2]}\nEstado:{elemento[3]}\n") 
-                    z+=1
-                numero_contrato = int(input())
+                        z+=1
+                def elije():  
+                    elije = int(input("Elije:\n1)Firmar contrato\n2)Retroceder\n"))
+                    if elije == 1:
+                        print("-----------------------")
+                    elif elije == 2:
+                        interfazTrabajador()
+                    else:
+                        print("Opción No Valida !")
+                        elije()
+                elije()
+                numero_contrato = int(input("¿Que contrato desea firmar?\n"))
 
                 a=0
                 encontro_contrato = False
                 for elemento in lista_contratos:
                     if elemento[0] == usuario:
-                        if a == numero_contrato:
+                        if a == (numero_contrato - 1):
                             elemento[3] = True
                             encontro_contrato = True
                         a+=1
@@ -194,10 +188,8 @@ def logeo():
             
             firmar_contrato()
             def opciones():
-                opcion = int(input("Elige: \n1)Firmar otro contrato\n2)Retroceder\n"))
+                opcion = int(input("Elije: \n1)Retroceder\n"))
                 if opcion == 1:
-                    firmar_contrato()
-                elif opcion == 2:
                     interfazTrabajador() 
                 else:
                     print("Opción No Valida !")
@@ -242,6 +234,7 @@ def logeo():
         elif opcion1 == "5":
             print("Elegiste la opción 5")
             logeo()        
+
     #Funcion Crear anuncios         
     def crearAnunciosAdmin():
         nombre_anuncio = input("Ingrese el título del anuncio:")
@@ -262,7 +255,7 @@ def logeo():
 
         opciones_crearanuncio()
 
-    #VerReclamos:
+
     def verReclamosAdmin():
             print("A continuación se mostrarán todos los reclamos:") 
             y=1
@@ -275,5 +268,20 @@ def logeo():
                 print("Descripción: "+ e[2])
                 print("________________________________________________")
                 y+=1
-logeo()
 
+    usuario = input("Colocar usuario:")
+    password = input("Colocar contraseña:")
+    encontro = False
+    for cuenta in cuentas:
+        if (usuario == cuenta[0]) & (password == cuenta[1]) :
+            encontro = True 
+            if (cuenta[2] == "Admin"):
+                interfazAdmin()
+            elif (cuenta[2] == "Trabajador"):
+                interfazTrabajador()
+    
+    if encontro == False:
+        print("Incorrecto")
+        logeo()
+
+logeo()
