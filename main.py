@@ -71,7 +71,7 @@ def logeo():
                 fecha_contrato = str(datetime.datetime.now())
 
                 
-                
+                #Esta funcion sirve para saber el tipo de contrato
                 def contratos():
                     
                     description_option = input("Elige el tipo de contrato: \n1.Contrato Area Lacteos\n2.Contrato Area Frutas y Verduras\n3.Contrato Caja\n")
