@@ -72,7 +72,7 @@ def logeo():
                 fecha_contrato = str(datetime.datetime.now())
 
                 
-                #Esta funcion sirve para saber el tipo de contrato
+                #Esta funcion sirve para identificar el tipo de contrato
                 def contratos():
                     
                     description_option = input("Elige el tipo de contrato: \n1.Contrato Area Lacteos\n2.Contrato Area Frutas y Verduras\n3.Contrato Caja\n")
@@ -203,7 +203,7 @@ def logeo():
 
         elif opcion1 == "4":
             print("Elegiste la opción 4")
-            
+       #Esta funcion sirve para ver los beneficios     
             def beneficios():
                 opcion_beneficios = input("1.Descuento adicional del 5% en PlazaVea\n2.Recompensas en Agora Club\n3.Descuentos en tiendas del grupo Intercorp\n4.Bonos y utilidades\n5.Capacitación y desarrollo profesional\n")
                 if opcion_beneficios == "1":
