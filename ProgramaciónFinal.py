@@ -1,5 +1,5 @@
 import datetime
-*se crean cuentas tanto para administradores como trabajadores*
+#se crean cuentas tanto para administradores como trabajadores
 cuentas = [("admin","admin","Admin"),("user01","user01","Trabajador"),("user02","user02","Trabajador"),("user03","user03","Trabajador")]
 lista_anuncios = []
 lista_reclamos = []
